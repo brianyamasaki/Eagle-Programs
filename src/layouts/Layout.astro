@@ -12,6 +12,9 @@ import Links from '../components/Links.astro';
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<Links />
@@ -24,6 +27,7 @@ import Links from '../components/Links.astro';
 	html,
 	body {
 		margin: 0 1rem;
+		font-family: "Roboto Flex", Arial, "Helvetica Neue", Helvetica, sans-serif;
 	}
 	h1 {
 		text-align: center;

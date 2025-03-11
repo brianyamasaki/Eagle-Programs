@@ -4,6 +4,10 @@ import Image from 'astro/components/Image.astro';
 
 import Example1Pdf from '../assets/examples/Example-1.pdf';
 import Example1Jpg from '../assets/examples/Example-1.jpg';
+import GameTimePdf from '../assets/examples/GameTime.pdf';
+import GameTimeJpg from '../assets/examples/GameTime.jpg';
+import ArrowPdf from '../assets/examples/Arrow.pdf';
+import ArrowJpg from '../assets/examples/Arrow.jpg';
 import ThreeEaglesPdf from '../assets/examples/Three-Eagles.pdf';
 import ThreeEaglesJpg from '../assets/examples/Three-Eagles.jpg';
 import type { ImageMetadata } from 'astro';
@@ -18,13 +22,25 @@ type ExItem = {
 const examples:ExItem[] = [
   {
     title: "First Eagle COH program",
-    description: "This is the first Program I made and had a very basic, super clean front cover design. This inside is similar to previous Eagle Court of Honor designs used by previous Eagle Scouts from Troop 570.",
+    description: "This is the first Program I made and had a very basic, super clean front cover design. This leadership and advancement is a classic presentation used by previous Eagle Scouts from Troop 570.",
     pdfFile: Example1Pdf,
     jpgFile: Example1Jpg
   },
   {
+    title: "The Ribbons Cover",
+    description: "This program was the beginning of the Ribbons Cover (drawn by one of the Eagle Scouts) and new ways to show advancement and merit badges. Blank pages were replaced by scouting games like you would find on a children's menu at a restaurant.",
+    pdfFile: GameTimePdf,
+    jpgFile: GameTimeJpg
+  },
+  {
+    title: "The Advancement Arrow is born",
+    description: "I was shown an interesting chart showing progress toward a goal and created a graphic that gave us a new way to show Advancement through the ranks as well as Merit Badges earned that takes up less space and still looks amazing.",
+    pdfFile: ArrowPdf,
+    jpgFile: ArrowJpg
+  },
+  {
     title: "Three Eagles COH program",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure ",
+    description: "I love this program because it shows the unique personalities and interests of each scout. Note that while one scout shows leadership and advancement, two other scouts skipped that section. Each scout wrote what they thought was important or memorable in their scouting career. One scout omitted the Eagle Project section because he wanted to write about other parts of his life.",
     pdfFile: ThreeEaglesPdf,
     jpgFile: ThreeEaglesJpg
   }
