@@ -1,0 +1,65 @@
+---
+const links = [
+  {
+    title: "Intro",
+    url: '/',
+    step: ''
+  },
+  {
+    title: "Covers",
+    url: '/covers',
+    step: '1'
+  },
+  {
+    title: "Write",
+    url: '/write',
+    step: '2'
+  },
+  {
+    title: "Examples",
+    url: '/examples',
+    step: '3'
+  },
+  {
+    title: "Final Details",
+    url: '/misc',
+    step: '4'
+  },
+]
+---
+<nav>
+  <ul>
+    {
+      links.map(item => (
+        <li>
+          <a href={item.url}>{item.title}</a>
+          <div>{item.step ? `Step ${item.step}` : ''}</div>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style lang="scss">
+  ul {
+    margin:auto;
+    list-style: none;
+    padding: 0;
+    display:flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: lightblue;
+    padding:0.4rem 0;
+    li {
+      font-size:1.3rem;
+      a {
+        text-decoration: none;
+      }
+      div {
+        text-align: center;
+        color: gray;
+      }
+    }
+  }
+</style>

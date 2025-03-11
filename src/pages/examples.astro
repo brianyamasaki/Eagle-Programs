@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
+
+import Example1Pdf from '../assets/examples/Example-1.pdf';
+import Example1Jpg from '../assets/examples/Example-1.jpg';
+import ThreeEaglesPdf from '../assets/examples/Three-Eagles.pdf';
+import ThreeEaglesJpg from '../assets/examples/Three-Eagles.jpg';
+import type { ImageMetadata } from 'astro';
+
+type ExItem = {
+  title: string;
+  description: string;
+  pdfFile: string;
+  jpgFile: ImageMetadata;
+}
+
+const examples:ExItem[] = [
+  {
+    title: "First Eagle COH program",
+    description: "This is the first Program I made and had a very basic, super clean front cover design. This inside is similar to previous Eagle Court of Honor designs used by previous Eagle Scouts from Troop 570.",
+    pdfFile: Example1Pdf,
+    jpgFile: Example1Jpg
+  },
+  {
+    title: "Three Eagles COH program",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure ",
+    pdfFile: ThreeEaglesPdf,
+    jpgFile: ThreeEaglesJpg
+  }
+];
+---
+
+<Layout 
+  title="Example Eagle Court of Honor Programs"
+  description="These are some past Eagle Court of Honor programs for some Troop 570 Eagle Scouts"
+>
+  <main>
+    <h2>Example Programs</h2>
+  	<ul>
+      {
+        examples.map(item => (
+          <li>
+            <h4><a href={item.pdfFile}>{item.title}</a></h4>
+            <div class="side-by-side">
+              <div class="img-container">
+                <a href={item.pdfFile}><Image src={item.jpgFile} alt=""/></a>
+                Click photo to view PDF
+              </div>
+              <div class="description">{item.description}</div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    max-width: 60rem;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.6rem;
+    text-align: center;
+    a {
+      text-decoration: none;
+    }
+  }
+  .side-by-side {
+    display:flex;
+    gap: 0.5rem;
+  }
+  ul { 
+    list-style: none;
+    li {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid gray;
+      margin-bottom: 0.5rem;
+    }
+    .img-container {
+      img {
+        max-width: 10rem;
+        max-height: 15rem;
+        object-fit: contain;
+      }
+    }
+    .description {
+      font-size: 1.5rem;
+    }
+
+  }
+</style>

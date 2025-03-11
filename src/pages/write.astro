@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ThreeEaglesPdf from '../assets/examples/Three-Eagles.pdf';
+---
+
+<Layout
+	title="Decide what you want to write about"
+	description=""
+>
+	<main>
+		<p>
+			Each Eagle Scout writes up whatever stories they want to tell about their journey through scouting, their favorite events, their Eagle Project and whatever else they want to talk about. 
+		</p>
+
+    <ul>
+      <li>
+        Write about your perspective on the scouting experience
+      </li>
+      <li>
+        Write about your Eagle Scout project
+      </li>
+      <li>
+        Write about a unique / favorite event or outing
+      </li>
+      <li>
+        Write about some learned skill or experience
+      </li>
+    </ul>
+    <p class="blockquote">
+      Note that Eagle projects usually have photographs taken and shared, making it easier to find photos to include in the program.
+    </p>		
+    <p>
+			Take specific note of <a href={ThreeEaglesPdf}>this program for Three Eagle Scouts</a>
+		</p>
+		<p>
+			This program for all three scouts shows how each scout presented what they wanted in the way they wanted. </p>
+		<ul>
+			<li>
+				I had to switch typefaces for Noah because he wrote so many little snippets of text and I couldn't figure out how to fit it all in with my usual typeface
+			</li>
+			<li>
+				Two of the scouts didn't want to highlight their leadership and merit badges and that was their personal choice. 
+			</li>
+		</ul>
+		<p>
+			Each Eagle scout gets to choose what how much to write and what to write about.
+		</p>
+	</main>
+</Layout>
+
+<style lang="scss">
+	main {
+		max-width: 55rem;
+		margin:1rem auto;
+		font-size: 1.4rem;
+	}
+	h1 {
+		text-align: center;
+		font-size: 2.4rem;
+	}
+	h2 {
+		text-align: center;
+	}
+	.salutation {
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+	.blockquote {
+		border-radius: 1rem;
+		padding:1rem 2rem;
+		background-color: rgb(239, 191, 191);
+	}
+
+</style>

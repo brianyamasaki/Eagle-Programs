@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
+
+import EagleList from '../assets/Eagle-Honor-Roll-2.jpg';
+---
+
+<Layout
+	title="Miscellaneous Details"
+	description=""
+>
+	<main>
+
+		<h3>Page Limitations</h3>
+		<p>Note that because these programs are papers folded in half, we must fit in 4, 8 or 12 pages. It's up to me to figure out how to fit it all in or take up empty space. </p>
+		<h3>The List of Eagle Scouts</h3>
+		<div class="side-by-side">
+			<a href={EagleList.src}><Image src={EagleList} alt="Eagle Honor Roll" /></a>
+			<p>
+				Decide if you want the listing of Troop 570 Eagle scouts (boy troop, girl troop or both) on the back page of the program. You may skip this Eagle listing if that's your wish.
+			</p>	
+		</div>
+		<h3>Paying for the Programs</h3>
+		<p>
+			The Troop will no longer pay for the programs to be printed. We will use <a href="https://minuteman.com/us/locations/wa/woodinville/">Woodinville Minuteman Printing</a> because they apparently give the troop discounts 
+			and consistently do a great job. The print shop must have 3 business days to print, fold and staple the programs before your COH. 
+			I think we're talking $2 to $4 per program (depending on how many sheets of paper they use &ndash; please call them to get an estimate before I place the order). 
+			Typical orders are for 30 copies of the program, but ask around to see who is coming. 
+			A folded and stapled program on 8 ½ by 11 inch card stock (80 or 100 pound paper) with 4, 8 or 12 pages 
+			(usually, a program for a single scout is 4 pages, two scouts is 8 pages, etc). 
+		</p>
+		<p>
+			Scout, if you're 18, you can just call me Brian instead of Mr. Yamasaki. Otherwise, please observe standard BSA communication with adult protocol, include your parent on every communication and call me Mr. Yamasaki. 
+		</p>
+		<p>
+			I am doing this on a voluntary basis and I do have a limit to how much time I can spend on your program. Please be responsive when I send questions and be patient on my ability to update your program. 
+		</p>		
+		<p>
+			Looking forward to working with you, 
+		</p>		
+
+		Brian Yamasaki 
+
+		
+	</main>
+</Layout>
+
+<style lang="scss">
+	main {
+		max-width: 55rem;
+		margin:1rem auto;
+		font-size: 1.4rem;
+	}
+	h1 {
+		text-align: center;
+		font-size: 2.4rem;
+	}
+	h2 {
+		text-align: center;
+	}
+	.blockquote {
+		border-radius: 1rem;
+		padding:1rem 2rem;
+		background-color: rgb(239, 191, 191);
+	}
+	.side-by-side {
+		display:flex;
+		gap: 0.5rem;
+		p {
+			margin:0;
+		}
+	}
+	img {
+		max-width: 10rem;
+		max-height: 15rem;
+		object-fit: contain;
+		float:left;
+		border:1px solid black;
+	}
+
+</style>

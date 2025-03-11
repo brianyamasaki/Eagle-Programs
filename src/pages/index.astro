@@ -1,11 +1,72 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Eagle Court of Honor Program Assistance"
+	description=""
+>
+	<main>
+
+		<p class="salutation">Hello Eagle Scout and Family, </p>
+		<p>
+			Creating a program for your Eagle Scout Court of Honor can seem like an insurmountable task. I’m here to help you create something beautiful and memorable to remember your teen life in scouting.  
+		</p>
+		<p class="blockquote">
+			You must start creating your program at least 3 to 4 weeks before your COH date. I will need a couple weeks to work with you to refine the program (it usually takes 6 or 7 iterations until it's done. The print shop must have at least 3 - 5 business days to print, fold and staple the programs. 
+		</p>
+
+		<h3>It's All Up To You</h3>
+		<p>
+			Each Eagle Scout writes up whatever stories they want to tell about their journey through scouting, their favorite events, their Eagle Project and whatever they want to talk about. You can show off which Merit Badges you've earned abd the leadership positions you've held. You can choose to show snapshots through your years in scouting.
+		</p>
+		<ul>
+			<li>
+				<a href="/covers">Choose a cover for your program</a>
+			</li>
+			<li>
+				<a href="/write">Decide what you want to write about</a>
+			</li>
+			<li>
+				<a href="/misc">Miscellaneous Details</a>
+			</li>
+		</ul>		
+		
+		<h3>Photos</h3>
+		<p>
+			Send me lots of pictures (in the highest resolution possible) and I'll figure out how to tell the story. OR point me at the Smugmug gallery that has the photos of your project and let me choose. 
+		</p>
+
+		<h3>Leadership and Advancement</h3>
+		<p>
+			Decide how much of your leadership and merit badges you want to show. If you want to show it all, grab an Advancement Worksheet from the above folder and fill it out. 
+		</p>
+		
+	</main>
 </Layout>
+
+<style lang="scss">
+	main {
+		max-width: 55rem;
+		margin:1rem auto;
+		font-size: 1.4rem;
+	}
+	h1 {
+		text-align: center;
+		font-size: 2.4rem;
+	}
+	h2 {
+		text-align: center;
+	}
+	.salutation {
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+	.blockquote {
+		border-radius: 1rem;
+		padding:1rem 2rem;
+		background-color: rgb(239, 191, 191);
+	}
+
+</style>

@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
+
+import Classic1 from '../assets/covers/Classic1.jpg';
+import Classic2 from '../assets/covers/Classic2.jpg';
+import BSA1 from '../assets/covers/BSA1.jpg';
+import BSA2 from '../assets/covers/BSA2.jpg';
+import Ribbons1 from '../assets/covers/Ribbons1.jpg';
+import Ribbons2 from '../assets/covers/Ribbons2.jpg';
+import Flag1 from '../assets/covers/waving-flag1.jpg'
+import Flag2 from '../assets/covers/waving-flag2.jpg';
+
+type Item = {
+  title: string;
+  jpgFile: ImageMetadata;
+  note?: string;
+}
+
+const choices:Item[] = [
+  {
+    title: "Classic1",
+    jpgFile: Classic1
+  },
+  {
+    title: "Classic2",
+    jpgFile: Classic2
+  },
+  {
+    title: "BSA 1",
+    jpgFile: BSA1,
+    note: "Similar to official BSA Cover"
+  },
+  {
+    title: "BSA 2",
+    jpgFile: BSA2,
+    note: "Similar to official BSA Cover"
+  },
+  {
+    title: "Ribbons 1",
+    jpgFile: Ribbons1,
+    note: "Drawn by Troop 570 Eagle Scout"
+  },
+  {
+    title: "Ribbons 2",
+    jpgFile: Ribbons2,
+    note: "Drawn by Troop 570 Eagle Scout"
+  },
+  {
+    title: "Waving Flag 1",
+    jpgFile: Flag1,
+    note: "Designed by Troop 570 Eagle Scout"
+  },
+  {
+    title: "Waving Flag 2",
+    jpgFile: Flag2,
+    note: "Designed by Troop 570 Eagle Scout"
+  },
+
+];
+---
+
+<Layout 
+  title="Cover Choices"
+  description="These are the cover choices that I offer"
+>
+  <main>
+		<p>
+			<a href="/covers"><strong>Choose a cover</strong></a> or draw your own using Adobe Illustrator or Affinity Designer/Photo. If you are a designer yourself, I am happy to share my visual assets and help you design it yourself. 
+		</p>
+    <p>
+      Note that all text on the cover can be changed or removed (except the text on the badge or pin).
+    </p>
+  	<ul>
+      {
+        choices.map(item => (
+          <li>
+            <a href={item.jpgFile.src}><Image src={item.jpgFile} alt={item.title} /></a>
+            <h4>{item.title}</h4>
+            <p>{item.note || ''}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    max-width: 60rem;
+    margin: auto;
+  }
+  p {
+    font-size:1.4rem;
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    gap: 0.5rem; 
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      border: 1px solid gray;
+      padding: 0.5rem;
+      img {
+        max-width: 20rem;
+        max-height: 30rem;
+        object-fit: contain;
+      }
+      h4 {
+        margin-top: 0;
+        text-align: center;
+        font-size:1.5rem;
+      }
+      p {
+        text-align: center;
+        font-size:1.2rem;
+        margin-bottom:0.3rem;
+      }
+    }
+
+  }
+</style>
