@@ -10,6 +10,23 @@ import ArrowPdf from '../assets/examples/Arrow.pdf';
 import ArrowJpg from '../assets/examples/Arrow.jpg';
 import ThreeEaglesPdf from '../assets/examples/Three-Eagles.pdf';
 import ThreeEaglesJpg from '../assets/examples/Three-Eagles.jpg';
+import BrandonPdf from '../assets/examples/Brandon.pdf';
+import BrandonJpg from '../assets/examples/Brandon.jpg';
+import Nika from '../assets/examples/Nika.pdf';
+import HonorRollJpg from '../assets/Eagle-Honor-Roll-2.jpg';
+import DavidPdf from '../assets/examples/David.pdf';
+import EricPdf from '../assets/examples/Eric.pdf';
+import GavinPdf from '../assets/examples/Gavin.pdf';
+import IanPdf from '../assets/examples/Ian.pdf';
+import JackNPdf from '../assets/examples/JackN.pdf';
+import JackTPdf from '../assets/examples/JackT.pdf';
+import JaydenZakPdf from '../assets/examples/Jayden&Zak.pdf';
+import KylePdf from '../assets/examples/Kyle.pdf';
+import KianPdf from '../assets/examples/Kian.pdf';
+import MasonPdf from '../assets/examples/Mason.pdf';
+import NickPdf from '../assets/examples/Nick.pdf';
+
+
 import type { ImageMetadata } from 'astro';
 
 type ExItem = {
@@ -21,39 +38,106 @@ type ExItem = {
 
 const examples:ExItem[] = [
   {
-    title: "First Eagle COH program",
-    description: "This is the first Program I made and had a very basic, super clean front cover design. This leadership and advancement is a classic presentation used by previous Eagle Scouts from Troop 570.",
+    title: "The First Eagle COH program",
+    description: `This is the first Program I made and it had a very basic, super clean front cover design. 
+      This leadership and advancement section is a classic design used by previous Eagle Scouts from Troop 570.`,
     pdfFile: Example1Pdf,
     jpgFile: Example1Jpg
   },
   {
     title: "The Ribbons Cover",
-    description: "This program was the beginning of the Ribbons Cover (drawn by one of the Eagle Scouts) and new ways to show advancement and merit badges. Blank pages were replaced by scouting games like you would find on a children's menu at a restaurant.",
+    description: `This program was the beginning of the Ribbons Cover (drawn by one of the Eagle Scouts) and new ways to show advancement and merit 
+    badges. By special request of the scouts, blank pages were replaced by scouting games like you would find on a children's menu at a restaurant.`,
     pdfFile: GameTimePdf,
     jpgFile: GameTimeJpg
   },
   {
     title: "The Advancement Arrow is born",
-    description: "I was shown an interesting chart showing progress toward a goal and created a graphic that gave us a new way to show Advancement through the ranks as well as Merit Badges earned that takes up less space and still looks amazing.",
+    description: `I was shown an interesting chart showing progress toward a goal and inspired by this, created a graphic that gave us a new way to show 
+      Leadership, Advancement through the ranks as well as Merit Badges earned that takes up less space and still looks amazing.`,
     pdfFile: ArrowPdf,
     jpgFile: ArrowJpg
   },
   {
-    title: "Three Eagles COH program",
+    title: "Three Eagles, One Program",
     description: "I love this program because it shows the unique personalities and interests of each scout. Note that while one scout shows leadership and advancement, two other scouts skipped that section. Each scout wrote what they thought was important or memorable in their scouting career. One scout omitted the Eagle Project section because he wanted to write about other parts of his life.",
     pdfFile: ThreeEaglesPdf,
     jpgFile: ThreeEaglesJpg
+  },
+  {
+    title: "The Merit Badge Gallery",
+    description: `This program has a different look for showing the merit badges earned. My job is to make every program look good and if the scout gives me less text, I 
+    need to fill with more graphics, in this case, showing each Merit Badge earned for Eagle. The family provided me with a lot of photos of the Eagle Scout's journey through
+    scouting, so I created multiple pages of pictures as requested. Also notice how the agenda is on the last page and the Eagle Listing is inside the cover. Once again, 
+    the scout can make choices.`,
+    pdfFile: BrandonPdf,
+    jpgFile: BrandonJpg
+  },
+  {
+    title: "The Girl Troop Eagles",
+    description: "This program is one of the first Eagle Scouts from the Girl Troop. This program shows that Eagle Scouts are Eagle Scouts and represent the best of scouting, regardless whether Boy Troop or Girl Troop.",
+    pdfFile: Nika,
+    jpgFile: HonorRollJpg
   }
 ];
+type PdfItem = {
+  name: string;
+  src: string;
+}
+const pdfs:PdfItem[] = [
+  {
+    name: 'David',
+    src: DavidPdf
+  },
+  {
+    name: 'Eric',
+    src: EricPdf
+  },
+  {
+    name: 'Gavin',
+    src: GavinPdf
+  },
+  {
+    name: 'Ian',
+    src: IanPdf
+  },
+  {
+    name: 'JackN',
+    src: JackNPdf
+  },
+  {
+    name: 'JackT',
+    src: JackTPdf
+  },
+  {
+    name: 'Jayden and Zak',
+    src: JaydenZakPdf
+  },
+  {
+    name: 'Kyle',
+    src: KylePdf
+  },
+  {
+    name: 'Kian',
+    src: KianPdf
+  },
+  {
+    name: 'Mason',
+    src: MasonPdf
+  },
+  {
+    name: 'Nick',
+    src: NickPdf
+  },
+]
 ---
 
 <Layout 
   title="Example Eagle Court of Honor Programs"
   description="These are some past Eagle Court of Honor programs for some Troop 570 Eagle Scouts"
 >
-  <main>
-    <h2>Example Programs</h2>
-  	<ul>
+    <h2>Notable Programs</h2>
+  	<ul class="notables">
       {
         examples.map(item => (
           <li>
@@ -61,7 +145,7 @@ const examples:ExItem[] = [
             <div class="side-by-side">
               <div class="img-container">
                 <a href={item.pdfFile}><Image src={item.jpgFile} alt=""/></a>
-                Click photo to view PDF
+                <p class="text-center">Click photo to view PDF</p>
               </div>
               <div class="description">{item.description}</div>
             </div>
@@ -69,20 +153,28 @@ const examples:ExItem[] = [
         ))
       }
     </ul>
-  </main>
+    <h2>Other Programs</h2>
+    <p>
+      The following are links to other programs. You'll see similarities but you'll also see how each scout could make choices to make it their own.
+    </p>
+    <ul>
+      {
+        pdfs.map(item => (
+          <li>
+            <a href={item.src}>{item.name}</a>
+          </li>
+        ))
+      }
+    </ul>
 </Layout>
 
 <style lang="scss">
-  main {
-    max-width: 60rem;
-    margin: auto;
-  }
   h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   h4 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-align: center;
     a {
       text-decoration: none;
@@ -90,25 +182,36 @@ const examples:ExItem[] = [
   }
   .side-by-side {
     display:flex;
-    gap: 0.5rem;
+    gap: 1rem;
   }
-  ul { 
+  ul.notables { 
+    padding: 0;
     list-style: none;
     li {
       padding-bottom: 1rem;
       border-bottom: 1px solid gray;
       margin-bottom: 0.5rem;
+      min-height: 20rem;
     }
     .img-container {
       img {
-        max-width: 10rem;
-        max-height: 15rem;
+        max-width: 15rem;
+        height: 100%;
+        max-height: 20rem;
         object-fit: contain;
+        display:block;
       }
     }
     .description {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+    p.text-center {
+      text-align: center;
+      margin-bottom: 0;
     }
 
+  }
+  p {
+    font-size: 1.2rem;
   }
 </style>

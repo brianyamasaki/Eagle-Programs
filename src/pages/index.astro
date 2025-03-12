@@ -1,17 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
 
+import EagleEnsemble from '../assets/Eagle_Scout_Award_ensemble.png';
 ---
 
 <Layout
-	title="Eagle Court of Honor Program Assistance"
+	title="Creating Your Eagle Court of Honor Program"
 	description=""
 >
-	<main>
-
+		<Image src={EagleEnsemble} alt="Eagle Scout Award Ensemble" />
 		<p class="salutation">Hello Eagle Scout and Family, </p>
 		<p>
-			Creating a program for your Eagle Scout Court of Honor can seem like an insurmountable task. I’m here to help you create something beautiful and memorable to remember your teen life in scouting.  
+			Creating a program for your Eagle Scout Court of Honor can seem like an insurmountable task. I am here to help you create something 
+			beautiful and memorable to remember your life in scouting.  
 		</p>
 		<p class="blockquote">
 			You must start creating your program at least 3 to 4 weeks before your COH date. I will need a couple weeks to work with you to refine the program (it usually takes 6 or 7 iterations until it's done. The print shop must have at least 3 - 5 business days to print, fold and staple the programs. 
@@ -19,17 +21,19 @@ import Layout from '../layouts/Layout.astro';
 
 		<h3>It's All Up To You</h3>
 		<p>
-			Each Eagle Scout writes up whatever stories they want to tell about their journey through scouting, their favorite events, their Eagle Project and whatever they want to talk about. You can show off which Merit Badges you've earned abd the leadership positions you've held. You can choose to show snapshots through your years in scouting.
+			Each Eagle Scout writes up whatever stories they want to tell about their journey through scouting, their favorite events, their Eagle Project and whatever they want to talk about. You can show off which Merit Badges you've earned and the leadership positions you've held. You can choose to show snapshots through your years in scouting.
 		</p>
 		<h3>Remote Editing</h3>
 		<p>
-			I usually handle everything over email and telephone, rarely using Facetime, Zoom or Discord for videoconferencing. I will create a folder on OneDrive to share with you the current PDF of the program. Your job is to decide what's right, what's wrong and what you'd like to change.
+			I usually handle all interactions over email and telephone, rarely using Facetime, Zoom or Discord for videoconferencing. 
+			I will create a folder on OneDrive to share with you the current PDF of the program. Your job is to decide what's right, 
+			what's wrong and what you'd like to change and call me or mail me the changes you'd like.
 		</p>
 		
 		<h3>Steps to Success</h3>
 		<ul>
 			<li>
-				<strong>The Basics</strong>: Email me the Eagle Scout's name, spelled and presented as you'd like to see on the cover. Also send me the date of the court of honor and the location. You can change these later, but it tells me how much time we have to finish the program.
+				<strong>The Basics</strong>: Send me the Eagle Scout's name, spelled and presented as you'd like to see on the cover. Also send me the date of the court of honor and the location. You can change these later, but it tells me how much time we have to finish the program.
 			</li>
 			<li>
 				<a href="/covers"><strong>Choose a cover</strong> for your program</a>
@@ -51,19 +55,9 @@ import Layout from '../layouts/Layout.astro';
 			</li>
 		</ul>
 	
-	</main>
 </Layout>
 
 <style lang="scss">
-	main {
-		max-width: 55rem;
-		margin:1rem auto;
-		font-size: 1.4rem;
-	}
-	h1 {
-		text-align: center;
-		font-size: 2.4rem;
-	}
 	h2 {
 		text-align: center;
 	}
@@ -74,7 +68,12 @@ import Layout from '../layouts/Layout.astro';
 	.blockquote {
 		border-radius: 1rem;
 		padding:1rem 2rem;
-		background-color: rgb(239, 191, 191);
+		background-color: rgb(172, 182, 138);
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 
 </style>
