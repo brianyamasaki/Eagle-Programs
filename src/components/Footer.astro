@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+
+<div id="footer">
+  <h4>Please do not share this website outside Troop 570</h4>
+  <p class="privacy">
+    The programs shown in this website belong to actual Eagle Scouts who might not want these very personal memories to show up on Search Engines like Google. 
+  </p>
+  <ul>
+    <li>This website is not linked to by any websites on the Internet, so should never be available on Search Engines.</li>
+    <li>The <a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro">Robots.txt file and <code>noindex</code></a> also asks that this website not be scanned or indexed.</li>
+  </ul>
+<p class="copyright"> 
+    &copy; Copyright {year} - All Rights Reserved
+  </p>
+</div>
+
+<style lang="scss">
+  #footer {
+    padding: 4rem 0 2rem 0;
+    text-align: center;
+    background-color: rgb(172, 182, 138);
+    --mask: 
+      radial-gradient(30px at 25% 0,#0000 98%,#000) 50% 30px/120px 100% repeat-x,
+      radial-gradient(30px at 75% 50%,#000 99%,#0000 101%) top/120px 60px repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  h4 {
+    font-size: 1.6rem;
+  }
+  .privacy {
+    margin: auto;
+    font-size: 1.3rem;
+    max-width: 40rem;
+  }
+  .copyright {
+    font-size:1rem;
+  }
+  ul {
+    li {
+      list-style-type: none;
+
+    }
+  }
+}
+</style>
